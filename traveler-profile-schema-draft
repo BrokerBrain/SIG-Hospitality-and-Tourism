@@ -77,7 +77,7 @@
         "driverLicenseNumber": { "type": "string" }
       }
     },
-    // ... Add remaining extensions (trainPreferences, busPreferences, etc.) based on your spreadsheet ... 
+    // ... Add remaining extensions (trainPreferences, busPreferences, etc.) based on the SIG list 
   },
   "allOf": [
     { "$ref": "#/definitions/vendorExtension" }  
