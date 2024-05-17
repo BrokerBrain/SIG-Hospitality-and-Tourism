@@ -7,7 +7,7 @@
     "did": { "type": "string", "description": "Traveler's Decentralized Identifier" }
   },
   "definitions": {
-    "commonTravelPreferences": {
+    "commonTravelPreferences": { 
       "type": "object",
       "description": "Common travel preferences across multiple supplier types",
       "properties": {
@@ -51,7 +51,7 @@
       "description": "Preferences specific to air travel",
       "properties": {
         "preferredAirlines": { "type": "array", "items": { "type": "string" } },
-        "seatPreferences": { "type": "string" },
+        "seatPreferences": { "type": "string" }, 
         "frequentFlyerPrograms": { "type": "array", "items": { "type": "string" } },
         "knownTravelerNumber": { "type": "string" },
         "tsaPrecheck": { "type": "boolean" } 
@@ -77,7 +77,98 @@
         "driverLicenseNumber": { "type": "string" }
       }
     },
-    // ... Add remaining extensions (trainPreferences, busPreferences, etc.) based on the SIG list 
+    "trainPreferences": {
+      "type": "object",
+      "description": "Preferences for train travel",
+      "properties": {
+        // ... (add attributes from spreadsheet)
+      }
+    },
+    "busPreferences": {
+      "type": "object",
+      "description": "Preferences for bus travel",
+      "properties": {
+        // ... (add attributes from spreadsheet)
+      }
+    },
+    "ferryPreferences": {
+      "type": "object",
+      "description": "Preferences for ferry travel",
+      "properties": {
+        // ... (add attributes from spreadsheet)
+      }
+    },
+    "cruisePreferences": {
+      "type": "object",
+      "description": "Preferences for cruises",
+      "properties": {
+        // ... (add attributes from spreadsheet)
+      }
+    },
+    "loungePreferences": {
+      "type": "object",
+      "description": "Preferences for airport lounges",
+      "properties": {
+        // ... (add attributes from spreadsheet)
+      }
+    },
+    "orvNonMotorizedPreferences": {
+      "type": "object",
+      "description": "Preferences for non-motorized off-road vehicles",
+      "properties": {
+        // ... (add attributes from spreadsheet)
+      }
+    },
+    "orvMotorizedPreferences": {
+      "type": "object",
+      "description": "Preferences for motorized off-road vehicles",
+      "properties": {
+        // ... (add attributes from spreadsheet)
+      }
+    },
+    "taxiPreferences": {
+      "type": "object",
+      "description": "Preferences for taxi services",
+      "properties": {
+        // ... (add attributes from spreadsheet)
+      }
+    },
+    "autoVehPreferences": {
+      "type": "object",
+      "description": "Preferences for autonomous vehicles",
+      "properties": {
+        // ... (add attributes from spreadsheet)
+      }
+    },
+    "rvPreferences": {
+      "type": "object",
+      "description": "Preferences for recreational vehicles",
+      "properties": {
+        // ... (add attributes from spreadsheet)
+      }
+    },
+    "boatRentalPreferences": {
+      "type": "object",
+      "description": "Preferences for boat rentals",
+      "properties": {
+        // ... (add attributes from spreadsheet)
+      }
+    },
+    "restaurantPreferences": {
+      "type": "object",
+      "description": "Preferences for restaurants",
+      "properties": {
+        // ... (add attributes from spreadsheet)
+      }
+    },
+    "staticVenuesPreferences": {
+      "type": "object",
+      "description": "Preferences for static venues (attractions, events, etc.)",
+      "properties": {
+        // ... (add attributes from spreadsheet)
+      }
+    },
+    // ... Add "thingsToDo" extensions based on the spreadsheet ...
   },
   "allOf": [
     { "$ref": "#/definitions/vendorExtension" }  
