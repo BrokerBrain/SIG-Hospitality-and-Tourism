@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Traveler Profile",
+  "description": "Base traveler profile schema for Decentralized Identity Foundation",
+  "type": "object",
+  "properties": {
+    "did": { "type": "string", "description": "Traveler's Decentralized Identifier" }
+  },
+  "definitions": {
+    "commonTravelPreferences": {
+      "type": "object",
+      "description": "Common travel preferences across multiple supplier types",
+      "properties": {
+        "gender": { "type": "string", "enum": ["male", "female", "other"] },
+        "birthdate": { "type": "string", "format": "date" },
+        "preferredLanguage": { "type": "string" }, 
+        "nationality": { "type": "string" },
+        "accessibilityNeeds": { "type": "string" }, 
+        "dietaryRestrictions": { "type": "array", "items": { "type": "string" } },
+        "smokingPreference": { "type": "string", "enum": ["smoking", "non-smoking"] },
+        "petAllergies": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "passportAndVisaInformation": {
+      "type": "object",
+      "description": "Placeholder for verifiable credentials related to passports and visas",
+      "properties": {
+        "documentTypes": { "type": "array", "items": { "type": "string" }, "description": "Types of travel documents held (e.g., 'passport', 'visa')" }
+      }
+    },
+    "medicalInformation": {
+      "type": "object",
+      "description": "Medical information relevant to travel (potentially presented as VCs)",
+      "properties": {
+        "allergies": { "type": "array", "items": { "type": "string" } },
+        "medications": { "type": "array", "items": { "type": "string" } },
+        "medicalConditions": { "type": "array", "items": { "type": "string" } },
+        "emergencyContactName": { "type": "string" },
+        "emergencyContactPhone": { "type": "string" }
+      }
+    },
+    "activityPreferences": {
+      "type": "object",
+      "description": "Traveler's activity preferences",
+      "properties": {
+        "preferredActivities": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "airPreferences": {
+      "type": "object",
+      "description": "Preferences specific to air travel",
+      "properties": {
+        "preferredAirlines": { "type": "array", "items": { "type": "string" } },
+        "seatPreferences": { "type": "string" },
+        "frequentFlyerPrograms": { "type": "array", "items": { "type": "string" } },
+        "knownTravelerNumber": { "type": "string" },
+        "tsaPrecheck": { "type": "boolean" } 
+      }
+    },
+    "lodgingPreferences": {
+      "type": "object",
+      "description": "Preferences specific to lodging",
+      "properties": {
+        "preferredHotelChains": { "type": "array", "items": { "type": "string" } },
+        "roomType": { "type": "string" },
+        "bedType": { "type": "string" },
+        "smokingPreference": { "type": "string", "enum": ["smoking", "non-smoking"] },
+        "amenities": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "rentalCarPreferences": {
+      "type": "object",
+      "description": "Preferences for rental car services",
+      "properties": {
+        "preferredCarRentalCompanies": { "type": "array", "items": { "type": "string" } },
+        "carType": { "type": "string" },
+        "driverLicenseNumber": { "type": "string" }
+      }
+    },
+    // ... Add remaining extensions (trainPreferences, busPreferences, etc.) based on your spreadsheet ... 
+  },
+  "allOf": [
+    { "$ref": "#/definitions/vendorExtension" }  
+  ]
+}
